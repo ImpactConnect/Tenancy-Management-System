@@ -1,0 +1,36 @@
+{% extends "base_document.html" %}
+
+{% block content %}
+<h1>NOTICE TO QUIT</h1>
+
+<p>Date: {{ date }}</p>
+
+<p>To:<br>
+{{ tenant.first_name }} {{ tenant.last_name }}<br>
+{{ property.name }}<br>
+{{ property.address }}</p>
+
+<p>Dear {{ tenant.first_name }} {{ tenant.last_name }},</p>
+
+<p>TAKE NOTICE that you are hereby required to quit and deliver up possession of the premises above mentioned which you hold of us as tenant thereof on the expiry of one month from the date of service of this notice upon you.</p>
+
+<p><strong>Reason for Notice:</strong><br>
+{{ reason }}</p>
+
+<p>You are required to:</p>
+<ol>
+    <li>Vacate the premises by the specified date</li>
+    <li>Remove all personal belongings</li>
+    <li>Return all keys to the property management office</li>
+    <li>Settle any outstanding payments</li>
+    <li>Leave the property in a clean and good condition</li>
+</ol>
+
+<p>Failure to comply with this notice may result in legal proceedings being commenced against you for possession of the premises.</p>
+
+<div class="signature-block">
+    <div class="signature-line"></div>
+    <p>Property Manager's Signature<br>
+    Date: {{ date }}</p>
+</div>
+{% endblock %} 

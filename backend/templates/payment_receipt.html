@@ -1,0 +1,27 @@
+{% extends "base_document.html" %}
+
+{% block content %}
+<h1>PAYMENT RECEIPT</h1>
+
+<div style="border: 2px solid #000; padding: 20px; margin: 20px 0;">
+    <p><strong>Receipt No:</strong> {{ receipt_number }}</p>
+    <p><strong>Date:</strong> {{ payment_date.strftime('%d %B, %Y') }}</p>
+    
+    <p><strong>Received From:</strong><br>
+    {{ tenant_name }}<br>
+    {{ property_name }}</p>
+    
+    <p><strong>Amount Received:</strong> {{ amount|currency }}</p>
+    <p><strong>Payment Method:</strong> {{ payment_type }}</p>
+    <p><strong>Reference:</strong> {{ reference or 'N/A' }}</p>
+    
+    <p><strong>Payment For:</strong> Rent Payment</p>
+    
+    <div class="signature-block">
+        <div class="signature-line"></div>
+        <p>Authorized Signature</p>
+    </div>
+</div>
+
+<p style="font-size: 12px; font-style: italic;">This is a computer-generated receipt and does not require a physical signature.</p>
+{% endblock %} 

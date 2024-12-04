@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenancy Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>TMS Admin</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" data-page="dashboard">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-page="tenants">
+                        <i class="fas fa-users"></i> Tenants
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-page="properties">
+                        <i class="fas fa-building"></i> Properties
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-page="landlords">
+                        <i class="fas fa-user-tie"></i> Landlords
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-page="payments">
+                        <i class="fas fa-money-bill"></i> Payments
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-page="documents">
+                        <i class="fas fa-file-alt"></i> Documents
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" aria-label="Toggle Sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">0</span>
+                    </div>
+                </div>
+            </nav>
+
+            <div id="main-content">
+                <!-- Content will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for notifications -->
+    <div id="notificationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Notifications</h2>
+            <div id="notificationList"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/tenants.js"></script>
+    <script src="js/properties.js"></script>
+    <script src="js/landlords.js"></script>
+    <script src="js/payments.js"></script>
+    <script src="js/documents.js"></script>
+</body>
+</html> 

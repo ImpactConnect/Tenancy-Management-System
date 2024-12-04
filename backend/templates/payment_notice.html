@@ -1,0 +1,34 @@
+{% extends "base_document.html" %}
+
+{% block content %}
+<h1>RENT PAYMENT NOTICE</h1>
+
+<p>Date: {{ date }}</p>
+
+<p>Dear {{ tenant.first_name }} {{ tenant.last_name }},</p>
+
+<p>This is to remind you that rent payment is due for the property:</p>
+
+<p><strong>Property Address:</strong><br>
+{{ tenant.property.name }}<br>
+{{ tenant.property.address }}</p>
+
+<p><strong>Amount Due:</strong> {{ amount_due|currency }}</p>
+<p><strong>Due Date:</strong> {{ due_date.strftime('%d %B, %Y') }}</p>
+
+<p>Please ensure that payment is made on or before the due date to avoid any late payment penalties.</p>
+
+<p><strong>Payment Methods:</strong></p>
+<ul>
+    <li>Bank Transfer</li>
+    <li>Cash Payment at Office</li>
+    <li>Online Payment</li>
+</ul>
+
+<p>If you have already made the payment, please disregard this notice and provide us with the payment details for our records.</p>
+
+<p>Thank you for your prompt attention to this matter.</p>
+
+<p>Sincerely,<br>
+Property Management</p>
+{% endblock %} 

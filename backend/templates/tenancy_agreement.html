@@ -1,0 +1,50 @@
+{% extends "base_document.html" %}
+
+{% block content %}
+<h1>TENANCY AGREEMENT</h1>
+
+<p>THIS AGREEMENT is made on {{ date }} BETWEEN:</p>
+
+<p><strong>LANDLORD:</strong><br>
+{{ property.landlord.first_name }} {{ property.landlord.last_name }}<br>
+{{ property.landlord.address }}</p>
+
+<p><strong>TENANT:</strong><br>
+{{ tenant.first_name }} {{ tenant.last_name }}<br>
+{{ tenant.address }}</p>
+
+<h2>1. PROPERTY DETAILS</h2>
+<p>The Landlord agrees to let and the Tenant agrees to take the property known as:</p>
+<p>{{ property.name }}<br>
+{{ property.address }}</p>
+
+<h2>2. TERM OF TENANCY</h2>
+<p>The tenancy shall be for a period of {{ lease.duration }} months,
+commencing on {{ lease.start_date.strftime('%d %B, %Y') }}
+and ending on {{ lease.end_date.strftime('%d %B, %Y') }}.</p>
+
+<h2>3. RENT</h2>
+<p>The Tenant shall pay rent of {{ lease.rent_amount|currency }} per {{ lease.payment_frequency }}.</p>
+
+<h2>4. TENANT OBLIGATIONS</h2>
+<ol>
+    <li>Pay rent on time</li>
+    <li>Keep the property in good condition</li>
+    <li>Report any damages promptly</li>
+    <li>Not sublet without written permission</li>
+    <li>Allow reasonable access for inspections</li>
+</ol>
+
+<div class="signature-block">
+    <div style="float: left; width: 45%;">
+        <div class="signature-line"></div>
+        <p>Landlord's Signature<br>
+        Date: _________________</p>
+    </div>
+    <div style="float: right; width: 45%;">
+        <div class="signature-line"></div>
+        <p>Tenant's Signature<br>
+        Date: _________________</p>
+    </div>
+</div>
+{% endblock %} 
